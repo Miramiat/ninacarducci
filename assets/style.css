@@ -3,7 +3,7 @@ body {
 	margin: auto;
 }
 * {
-	font-family: 'Inter';
+	font-family: 'Inter', Arial, sans-serif;
 	font-style: normal;
 }
 .top-header {
@@ -62,8 +62,10 @@ body {
 }
 
 .picture {
-	width: 263.6px;
-	height: 262.88px;
+
+	z-index: 0;
+	width: calc(33.33% - 40px); /* Environ un tiers de la largeur, moins la marge de 20px de chaque côté */
+	height: auto;
 	flex: 1;
 	margin: 0 20px;
 	z-index: 0;
@@ -71,6 +73,8 @@ body {
 
 .picture img {
 	width: 100%;
+	height: auto;
+
 
 }
 #about-me {
@@ -82,7 +86,7 @@ body {
 	font-size: 30px;
 }
 .about-me__introduction {
-	font-family: 'Spectral';
+	font-family: 'Spectral', serif;
 	font-weight: 800;
 	font-style: italic;
 	width: 60%;
@@ -104,8 +108,9 @@ body {
 }
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
 	color: #fff;
-	background-color: #BEB45A;
+	background-color: #887e2a;
 	border-radius:0 ;
+	
 }
 .nav-pills .nav-link {
 	color: #000
@@ -139,20 +144,20 @@ body {
 }
 
 .quote {
-	font-family: 'Spectral';
+	font-family: 'Spectral', serif;
 	font-style: italic;
 	width: 70%;
 	margin: auto;
 	padding-block: 3em;
 }
 .quote__text {
-	font-family: Spectral;
+	font-family: 'Spectral', serif;
 	font-style: italic;
 	font-weight: 300;
 
 }
 .quote__author {
-	font-family: Spectral;
+	font-family: 'Spectral', serif;
 	font-weight: 800;
 	font-size: 22px;
 }
@@ -244,6 +249,11 @@ form textarea {
 input[type="submit"] {
 	background-color: #BEB45A;
 	padding: .5em 1em
+}
+
+.w-100{
+	width: 100%;
+	height: auto;
 }
 
 @media all and (max-width: 1180px) {
@@ -357,4 +367,73 @@ input[type="submit"] {
 	}
 
 }
+
+/* Reset des marges et des paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* Style du footer */
+
+.footer {
+    background-color: #081E22;    
+    color: #fff;
+
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+span{
+	font-size: 1.5em;
+}
+.footer-left {
+    text-align: center;
+}
+
+.footer-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer-logo img {
+    width: 27px;
+    height: 27px;
+	margin-left: 30px;
+}
+
+.footer-right {
+    text-align: center;
+}
+
+.footer-info {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+@media screen and (min-width: 650px) {
+
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+	
+	
+    }
+    .footer-left, .footer-right {
+        text-align: left;
+    }
+    .footer-info {
+        margin: 0;
+    }
+
+}
+
 

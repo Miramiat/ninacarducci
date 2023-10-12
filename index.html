@@ -20,6 +20,7 @@
 		as="style">
 	<link rel="stylesheet"
 		href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap&&subset=latin-ext">
+		
 
 	<title>Des Images Qui Parlent Plus Que des Mots, Nina Carducci</title>
 	<meta name="description"
@@ -113,8 +114,8 @@
 						alt="Homme en costume traversant la route à Tokyo">
 				</div>
 				<div class="carousel-item">
-					<img src="./assets/images/slider/nicholas-green-nPz8akkUmDI-unsplash-L.webp" width="1920"
-						height="887" srcset="
+					<img data-src="./assets/images/slider/nicholas-green-nPz8akkUmDI-unsplash-L.webp" width="1920"
+						height="887" data-srcset="
                 ./assets/images/slider/nicholas-green-nPz8akkUmDI-unsplash.webp 1920w,
                 ./assets/images/slider/nicholas-green-nPz8akkUmDI-unsplash-medium.webp 1000w,
                 ./assets/images/slider/nicholas-green-nPz8akkUmDI-unsplash-small.webp 650w"
@@ -122,8 +123,8 @@
 						alt="nicholas-green : Foule antousiaste les bras levés">
 				</div>
 				<div class="carousel-item">
-					<img src="./assets/images/slider/edward-cisneros-3_h6-1NPDGw-unsplash-L.webp" width="1920"
-						height="887" srcset="
+					<img data-src="./assets/images/slider/edward-cisneros-3_h6-1NPDGw-unsplash-L.webp" width="1920"
+						height="887" data-srcset="
                 ./assets/images/slider/edward-cisneros-3_h6-1NPDGw-unsplash.webp 1920w,
                 ./assets/images/slider/edward-cisneros-3_h6-1NPDGw-unsplash-medium.webp 1000w,
                 ./assets/images/slider/edward-cisneros-3_h6-1NPDGw-unsplash-small.webp 650w"
@@ -277,7 +278,7 @@
 
 			</div>
 			<div class="picture right">
-				<img src="./assets/images/camera-small-L.webp" width="375" height="374" alt="camera">
+				<img data-src="./assets/images/camera-small-L.webp" width="375" height="374" alt="camera">
 			</div>
 		</div>
 	</div>
@@ -287,8 +288,8 @@
 				<div class="footer-contact">
 					<span class="footer-name">Nina Carducci</span>
 					<span class="footer-logo">
-						<a class="social-link" href="https://www.instagram.com/ninacarducci.photo/?hl=fr"
-							target="_blank"><img src="./assets/images/instgram-logo-T.webp" alt="Logo Instagram"></a>
+						<a href="https://www.instagram.com/ninacarducci.photo/?hl=fr"
+							target="_blank"><img src="./assets/images/instgram-logo-T.webp" alt="Instagram logo"></a>
 					</span>
 				</div>
 				<div class="footer-details">
@@ -313,5 +314,15 @@
 		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 	<script src="./assets/maugallery.min.js" defer></script>
 	<script src="./assets/scripts.js" defer></script>
+	    <script>
+    $(document).ready(function() {
+        // Charger les images hors écran
+        $('img[data-src]').each(function() {
+            var $img = $(this);
+            $img.attr('src', $img.attr('data-src'));
+            $img.removeAttr('data-src');
+        });
+    });
+    </script>
 </body>
 </html>
